@@ -1,10 +1,12 @@
+// src/App.js
 import React from 'react';
 import UploadForm from './components/UploadForm';
+import './index.css';
 
 function App() {
   return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
-      <h1>⏳ TimeCapsule</h1>
+    <div className="app-container">
+      <h1 className="title">⏳ TimeCapsule</h1>
       <UploadForm />
     </div>
   );

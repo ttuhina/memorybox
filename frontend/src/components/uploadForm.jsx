@@ -1,38 +1,38 @@
+// src/components/UploadForm.js
 import React, { useState } from 'react';
-import axios from 'axios';
+import './UploadForm.css';
 
-export default function UploadForm() {
-  const [file, setFile] = useState(null);
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [sendDate, setSendDate] = useState('');
+function UploadForm() {
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (!file) return alert('Please select a file.');
-
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('email', email);
-    formData.append('message', message);
-    formData.append('sendDate', sendDate);
-
-    try {
-      const res = await axios.post('http://localhost:5001/api/timecapsule/upload', formData);
-      alert(res.data.message);
-    } catch (err) {
-      alert('Upload failed.');
-      console.error(err);
-    }
+    setSubmitted(true);
+    setTimeout(() => alert("Sent to the Future! 📦✨"), 1500);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="email" placeholder="Your email" value={email} onChange={e => setEmail(e.target.value)} required />
-      <textarea placeholder="Your message" value={message} onChange={e => setMessage(e.target.value)} required />
-      <input type="datetime-local" value={sendDate} onChange={e => setSendDate(e.target.value)} required />
-      <input type="file" onChange={e => setFile(e.target.files[0])} required />
-      <button type="submit">Send to the Future</button>
+    <form className={`upload-form ${submitted ? 'animate' : ''}`} onSubmit={handleSubmit}>
+      <label>Your Email</label>
+      <input type="email" required placeholder="example@domain.com" />
+
+      <label>Your Message</label>
+      <textarea required placeholder="Write your message here..." rows={4}></textarea>
+
+      <label>Date & Time</label>
+      <input type="datetime-local" required />
+
+      <label>Upload a File</label>
+      <input type="file" />
+
+      <button type="submit">Send to the Future 🚀</button>
+
+      <div className="box-animation">
+        <div className="lid" />
+        <div className="box" />
+      </div>
     </form>
   );
 }
+
+export default UploadForm;

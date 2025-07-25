@@ -1,0 +1,98 @@
+.upload-form {
+  background: #ffffffcc;
+  backdrop-filter: blur(8px);
+  padding: 30px;
+  width: 400px;
+  max-width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.upload-form.animate {
+  transform: scale(0.95);
+  animation: lockBox 1.2s forwards;
+}
+
+.upload-form label {
+  font-weight: 600;
+  color: #333;
+}
+
+.upload-form input,
+.upload-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.upload-form input:focus,
+.upload-form textarea:focus {
+  outline: none;
+  border-color: #7e5bef;
+}
+
+.upload-form button {
+  background: #7e5bef;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.upload-form button:hover {
+  background: #6842c2;
+}
+
+/* Box animation */
+.box-animation {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.upload-form.animate .box-animation {
+  display: block;
+}
+
+.lid, .box {
+  width: 60px;
+  height: 40px;
+  background: #7e5bef;
+  position: absolute;
+  left: 0;
+  border-radius: 4px;
+}
+
+.lid {
+  top: -20px;
+  transform-origin: bottom;
+  animation: closeLid 1s forwards;
+}
+
+.box {
+  top: 0;
+}
+
+@keyframes closeLid {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(90deg); }
+}
+
+@keyframes lockBox {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(0.95); }
+}
