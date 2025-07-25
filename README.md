@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# ⏳ Memory Box
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Project Banner](https://github.com/ttuhina/memorybox/blob/main/screenshot/sc1.png)  
 
-## Available Scripts
+A beautifully animated, calming web app where users can write a message to their future selves. Type a message, choose a date and time, and watch it safely get locked away in a virtual time capsule.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🌌 Animated starry night background for an immersive feel
+- 📨 Upload a message with your email and a scheduled time
+- 💌 Dynamic animations on submit (symbolizing "locking" the message)
+- 📁 Optional file upload with your message
+- 📆 Date and time picker (DD/MM/YYYY, HH:MM format)
+- 🎨 Minimalist yet magical design built with React and custom CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
+## 🧱 Tech Stack
 
-### `npm test`
+### 🌐 Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Tech             | Purpose                                                                 |
+|------------------|-------------------------------------------------------------------------|
+| **React.js**      | For building a fast, component-based user interface.                    |
+| **Vanilla CSS**   | For custom styling and layout  |
+| **JavaScript Animations** | Used for interactive animations and dynamic visual effects.            |
+| **FileReader API**| Allows previewing and handling of file uploads before submission.       |
 
-### `npm run build`
+### 🗃️ Backend 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Tech             | Purpose                                                                 |
+|------------------|-------------------------------------------------------------------------|
+| **Node.js**       | Handles server-side logic and message storage.                |
+| **Express.js**    | Provides API routes for handling uploads and form submissions.|
+| **Multer**        | Manages multipart file uploads to the server.                 |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🧪 Tooling
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Tool            | Purpose                                                                 |
+|-----------------|-------------------------------------------------------------------------|
+| **Vite / Create React App** | Bootstrap and serve the React project locally.                        |
+| **npm**          | Manage dependencies and project scripts.                               |
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📂 Folder Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+memorybox/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   └── UploadForm.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   └── index.js
+└── README.md
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🚀 Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1. Clone the repo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git clone https://github.com/yourusername/memorybox.git
+cd memorybox
+```
 
-### Code Splitting
+### 2. Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm install
+```
 
-### Analyzing the Bundle Size
+### 3. Start the development server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm start
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
