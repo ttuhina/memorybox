@@ -9,7 +9,7 @@ export default function UploadForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!file) return alert('No file selected!');
+    if (!file) return alert('Please select a file.');
 
     const formData = new FormData();
     formData.append('file', file);
@@ -18,10 +18,11 @@ export default function UploadForm() {
     formData.append('sendDate', sendDate);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/timecapsule/upload', formData);
+      const res = await axios.post('http://localhost:5001/api/timecapsule/upload', formData);
       alert(res.data.message);
     } catch (err) {
       alert('Upload failed.');
+      console.error(err);
     }
   };
 
@@ -35,4 +36,3 @@ export default function UploadForm() {
     </form>
   );
 }
-

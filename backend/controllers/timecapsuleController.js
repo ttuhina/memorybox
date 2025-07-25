@@ -1,4 +1,5 @@
-import scheduleEmail from '../../utils/scheduler.js';
+import scheduleEmail from '../utils/scheduler.js';
+
 
 export const handleUpload = async (req, res) => {
   try {
